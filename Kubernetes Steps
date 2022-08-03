@@ -51,3 +51,10 @@ Step3: create a pod
 
 Step4: verify the pods
 #kubectl get pods -n <name space>
+
+
+Step 5: Update they deployement
+#kubectl edit deployment <deployment name> -n <namespace>
+
+eg:
+#kubectl edit deployment httpd-deployment-nautilus -n httpd-namespace-nautilus
