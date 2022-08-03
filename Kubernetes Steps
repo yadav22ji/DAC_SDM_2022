@@ -45,9 +45,9 @@ spec:
             
 
 Step3: create a pod
-kubectl create -f httpd.yaml
+#kubectl create -f httpd.yaml
 
 
 
 Step4: verify the pods
-kubectl get pods -n <name space>
+#kubectl get pods -n <name space>
