@@ -1,0 +1,24 @@
+This Document would guide to setup minukube with kuberentes dashbooard and deployment
+
+Following commands needs to be executed at powershell in Administrative mode
+Step 1: Install minikube
+New-Item -Path 'c:\' -Name 'minikube' -ItemType Directory -Force
+Invoke-WebRequest -OutFile 'c:\minikube\minikube.exe' -Uri 'https://github.com/kubernetes/minikube/releases/latest/download/minikube-windows-amd64.exe' -UseBasicParsing
+
+
+Step 2: Add minikube in environment variable
+$oldPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
+if ($oldPath.Split(';') -inotcontains 'C:\minikube'){ `
+  [Environment]::SetEnvironmentVariable('Path', $('{0};C:\minikube' -f $oldPath), [EnvironmentVariableTarget]::Machine) `
+}
+
+
+Step 3: Start minikube using docker:
+minikube start --driver=docker
+
+Step 4: List pods
+minikube kubectl -- get po -A
+
+Step 5: Start Kubernetes dashboard
+minikube dashboard
+
