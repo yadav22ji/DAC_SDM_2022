@@ -22,3 +22,14 @@ minikube kubectl -- get po -A
 Step 5: Start Kubernetes dashboard
 minikube dashboard
 
+
+Deploying Load balancer
+
+Step 6: 
+a). create deployment and expose the port
+kubectl create deployment balanced --image=k8s.gcr.io/echoserver:1.4  
+kubectl expose deployment balanced --type=LoadBalancer --port=8080
+
+b). create a tunnel
+minikube tunnel
+
