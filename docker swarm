@@ -36,3 +36,12 @@ Step 5: Scale the service in the swarm
 
 view updated replicas
 # docker service ps linux_swarm
+
+Extras:
+
+Step 6: Leave a host/node from swarm cluster
+# docker swarm leave (run this on the actuall host which needs to be removed)
+
+
+to remove a node:
+docker node rm <node-name>
