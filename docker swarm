@@ -1,0 +1,38 @@
+Docker Swarm:
+
+A swarm consists of multiple Docker hosts which run in swarm mode and act as managers and workers.
+When you create a service, you define its optimal state (number of replicas, network and storage resources available to it, ports the service exposes to the outside world, and more). Docker works to maintain that desired state. For instance, if a worker node becomes unavailable, Docker schedules that node’s tasks on other nodes. A task is a running container which is part of a swarm service and managed by a swarm manager, as opposed to a standalone container.
+
+Steps to create a swarm:
+
+Step 1: Enable docker swarm 
+# docker swarm init
+
+verify the swarm node
+# docker node ls
+
+Step 2: Add nodes to the swarm:
+(Perform only on multiple host environment)
+#  docker swarm join --token  SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c 192.168.99.100:2377
+
+-- skip step 2 on Docker desktop
+
+Step 3: Deploy a service to the swarm
+# docker service create --replicas 1 --name linux_swarm alpine ping docker.com
+
+The 'docker service create' command creates the service.
+The '--name' flag names the service linux_swarm.
+The '--replicas' flag specifies the desired state of 1 running instance.
+The arguments alpine ping docker.com define the service as an Alpine Linux container that executes the command ping docker.com.
+
+Run docker service ls to see the list of running services:
+# docker service ls
+
+Step 4: Inspect service:
+# docker service inspect --pretty linux_swarm
+
+Step 5: Scale the service in the swarm
+# docker service scale linux_swarm=2
+
+view updated replicas
+# docker service ps linux_swarm
