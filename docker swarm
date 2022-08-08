@@ -44,4 +44,8 @@ Step 6: Leave a host/node from swarm cluster
 
 
 to remove a node:
-docker node rm <node-name>
+# docker node rm <node-name>
+
+
+to remove a running container:
+# docker rm --force <container_name>
