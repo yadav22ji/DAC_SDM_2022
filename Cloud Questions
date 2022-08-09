@@ -1,0 +1,23 @@
+What are Key-Pairs in AWS?
+List different types of Cloud Services.
+What do you understand by a Security Group?
+What is auto-scaling?
+What is the difference between stopping and terminating an EC2 instance? 
+What are the cloud service models?
+Waht are Deployment Models 
+Types of Multi tenancy in Cloud computing
+
+What is a DockerFile?
+Can a paused container be removed from Docker?
+Differentiate between virtualization and containerization
+What command is used for stopping a running container?
+What is a template used for describing a build of an image?
+What is a Docker Namespace?
+What is the lifecycle of a Docker Container?
+What are Docker swarms used for?
+
+What are the main components of K8S
+What is a cluster of containers in Kubernetes
+Describe kubernetes architecture
+List command to pods in k8s
+What is Minikube?
